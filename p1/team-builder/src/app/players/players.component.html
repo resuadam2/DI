@@ -11,11 +11,15 @@
 
 <h3>Team Players</h3>
 <ul class="players">
-    <li *ngFor="let player of players"
+    <li *ngFor="let player of players">
+    <!--
     [class.selected]="player === selectedPlayer"
     (click)="onSelect(player)">
+    -->
+    <a routerLink="/detail/{{player.id}}">
         <span class = "badge">Dorsal: {{player.dorsal}}</span>
         {{player.name}}
+    </a>
     </li>
 </ul>
 
