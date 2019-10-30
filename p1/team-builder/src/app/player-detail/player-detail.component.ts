@@ -27,6 +27,11 @@ export class PlayerDetailComponent implements OnInit {
     this.playerService.getPlayer(id).subscribe(player => this.player = player);
   }
 
+  save(): void {
+    this.playerService.updatePlayer(this.player)
+      .subscribe(() => this.goBack());
+  }
+
   goBack(): void {
     this.location.back();
   }

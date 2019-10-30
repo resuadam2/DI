@@ -10,6 +10,17 @@
 -->
 
 <h3>Team Players</h3>
+
+<div>
+    <label>Player name:
+      <input #playerName />
+    </label>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(playerName.value); playerName.value=''">
+      add
+    </button>
+</div>
+
 <ul class="players">
     <li *ngFor="let player of players">
     <!--
@@ -20,6 +31,8 @@
         <span class = "badge">Dorsal: {{player.dorsal}}</span>
         {{player.name}}
     </a>
+    <button class="delete" title="delete player"
+  (click)="delete(player)">x</button>
     </li>
 </ul>
 
